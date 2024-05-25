@@ -1,9 +1,15 @@
 import streamlit as st
+from auth import require_login
 
-code = '''
-import streamlit as st
-st.title('asdfa')
-'''
+@require_login
+def contents():
 
-st.code(code, language='python')
+    code = '''
+    import streamlit as st
+    st.title('asdfa')
+    '''
 
+    st.code(code, language='python')
+
+if __name__ == "__main__":
+    contents()

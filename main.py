@@ -1,9 +1,12 @@
 import streamlit as st
-from PIL import Image
+from auth import require_login
 
 
-st.title('設計管理　ツール')
-st.caption('左のサイドバーから　選択してください')
+# メインの内容
+@require_login
+def main_page():
+    st.title("WELCOME HH120 TOOL WEB APPS")
+    st.write("あなたは認証済みです")
 
-# image = Image.open('./data/ダウンロード.png')
-# st.image(image, width=200)
+if __name__ == "__main__":
+    main_page()
